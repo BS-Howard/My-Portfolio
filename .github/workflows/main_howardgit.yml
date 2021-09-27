@@ -21,9 +21,6 @@ jobs:
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
-        with:
-          name: ASP-app
-          path: '/published/**'
 
   deploy:
     runs-on: windows-latest
@@ -35,8 +32,6 @@ jobs:
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
-        with:
-          name: ASP-app
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
